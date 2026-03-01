@@ -1,1 +1,4 @@
-The pre-existing dataset used in this project consists of 12844 observations and 22 features. Each observation corresponds to an individual NBA player's average performance during a particular season, along with additional attributions such as height, the college they attended, age, and draft specifications. Performance-related features include the number of games played, average points per game, average assists, net rating, and other season-level statistics.  
+**Components of data:** 
+  - Kaggle tabular dataset consisting of 12844 observations and 22 features
+  - Observations correspond to an individual NBA's players average performance during a particular season along with their attributes 
+  - Features include height, weight, points per game, net-rating, number of games played, age, and other season-level statistics.
