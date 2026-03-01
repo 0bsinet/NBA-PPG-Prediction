@@ -9,20 +9,38 @@ A Python demo to illustrate iterative forecasting with NBA player points per gam
 - Demonstrate functionality through graphs
 
 ## How to run:
-1. Clone the repository
-    https://github.com/0bsinet/NBA-PPG-Prediction.git
 
-2. Navigate into project directory
+1. Clone the repository
+    ```bash
+    git clone https://github.com/0bsinet/NBA-PPG-Prediction.git
+    ```
+
+2. Navigate into the project directory
+    ```bash
     cd NBA-PPG-Prediction
+    ```
 
 3. Create a virtual environment
+    ```bash
     python -m venv venv
+    ```
 
 4. Activate the virtual environment
-    venv\Scripts\activate
+    - **Windows:**
+        ```bash
+        venv\Scripts\activate
+        ```
+    - **Mac/Linux:**
+        ```bash
+        source venv/bin/activate
+        ```
 
 5. Install dependencies
+    ```bash
     pip install -r requirements.txt
+    ```
 
-6. Run the prediciton script
+6. Run the prediction script
+    ```bash
     python script/forecasts_util.py
+    ```
