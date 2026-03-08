@@ -9,6 +9,8 @@ from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import root_mean_squared_error
 import matplotlib.pyplot as plt
+import argparse
+import os
 
 # Calculate RMSE across all years that were predicted
 def yearly_error(test_set, pred_df, prediction_years):
@@ -223,12 +225,19 @@ def main(player: str = None):
     plt.legend()
     plt.grid(True)
 
-    save_plot = input("Save plot to file? (y/n): ").strip().lower() == "y"
+    save_plot = input("Save graph to file? (y/n): ").strip().lower() == "y"
 
     if save_plot:
+        if not os.path.exists("plots"):
+            os.makedirs("plots")
+            print("Folder 'plots' created.")
         plt.savefig(f"plots/{player.replace(' ', '_')}_ppg.png")
 
     plt.show()
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Predict NBA player PPG for future seasons.")
+    parser.add_argument("--player", type=str, help="Full name of the player to predict (e.g. 'LeBron James')")
+
+    args = parser.parse_args()
+    main(player=args.player)
