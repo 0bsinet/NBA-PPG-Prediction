@@ -45,16 +45,6 @@ def main(player: str = None):
     # Make all player names follow the same structure as the user prompt
     df_master["player_name"] = df_master["player_name"].str.lower().str.strip() 
 
-    # Prompt user
-    if player is None:
-        try: 
-            player = input("Select a player (full name): ").strip().lower() # Avoid human error
-        except:
-            player = "lebron james" 
-    else:
-        player = player.strip().lower()
-
-
     # Handle errors if name is not in the column
     if not (df_master['player_name'] == player).any():
         raise ValueError(f"{player} not found in the player_name column.")
