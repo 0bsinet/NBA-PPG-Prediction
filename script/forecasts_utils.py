@@ -42,6 +42,13 @@ def main(player: str = None):
     df = pd.read_csv("data/all_seasons.csv")
     df_master = df.copy()
 
+    # Make all player names follow the same structure as the user prompt
+    df_master["player_name"] = df_master["player_name"].str.lower().str.strip() 
+
+    # Handle errors if name is not in the column
+    if not (df_master['player_name'] == player).any():
+        raise ValueError(f"{player} not found in the player_name column.")
+
     # Starting year of a season
     df_master["season_start"] = (
         df_master["season"]
@@ -64,6 +71,7 @@ def main(player: str = None):
 
     # Drop rows with no label values (e.g. last season of an NBA player)
     df_master = df_master.dropna(subset=['next_season_ppg'])
+
 
     # Map historical team names to their respective current team name
     team_map = {

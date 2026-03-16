@@ -50,4 +50,5 @@ A Python demo to illustrate iterative forecasting with NBA player points per gam
     Save graph to file? (y/n): y
     ```
 
-
+Example of line graph showing predictive accuracy:
+![Lebron James line graph](image.png)
