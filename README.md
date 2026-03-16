@@ -42,7 +42,7 @@ A Python demo to illustrate iterative forecasting with NBA player points per gam
 
 6. Run predictions for any player **in the dataset**
     ```bash
-    python script/forecasts_util.py --player "lebron james"
+    python script/forecasts_utils.py --player "lebron james"
     ```
 
 7. Save the graph to a folder (optional)
